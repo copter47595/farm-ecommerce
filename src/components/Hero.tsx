@@ -1,19 +1,45 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[600px] flex items-center justify-center bg-gradient-to-r from-green-50 to-green-100">
+    <section className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-cover bg-center bg-no-repeat relative">
-          {/* Placeholder for hero background image */}
-          <div className="w-full h-full bg-gradient-to-r from-green-900/20 to-green-700/20" />
-        </div>
+        {/* Option 1: ใช้รูปจากโฟลเดอร์ public */}
+        {/* <Image
+          src="/images/hero-bg.jpg"
+          alt="Farm background"
+          fill
+          className="object-cover"
+          priority
+        /> */}
+        
+        {/* Option 2: ใช้รูปจาก Supabase Storage */}
+        {/* <Image
+          src="https://your-project.supabase.co/storage/v1/object/public/products/hero-bg.jpg"
+          alt="Farm background"
+          fill
+          className="object-cover"
+          priority
+        /> */}
+        
+        {/* Option 3: ใช้รูปจาก URL ภายนอก - ACTIVE */}
+        <Image
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1920&q=80"
+          alt="Beautiful green farm field"
+          fill
+          className="object-cover"
+          priority
+        />
+        
+        {/* Green Overlay - ทำให้ข้อความอ่านง่ายขึ้น (จางมากเพื่อให้เห็นรูปชัด) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-black/20" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             ของดีจากฟาร์ม<br />
