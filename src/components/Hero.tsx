@@ -62,9 +62,8 @@ export default function Hero() {
             
             <Link href="/about">
               <Button 
-                variant="outline" 
                 size="lg"
-                className="border-white text-white hover:bg-white/20 px-8 py-4 text-lg font-medium rounded-full shadow-lg transition-all hover:scale-105"
+                className="bg-white/90 hover:bg-white text-green-700 px-8 py-4 text-lg font-medium rounded-full shadow-lg transition-all hover:scale-105 border-2 border-white"
               >
                 เกี่ยวกับเรา
               </Button>
