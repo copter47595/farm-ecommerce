@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -12,6 +12,7 @@ import { useCart } from '@/contexts/CartContext'
 import { supabase } from '@/lib/supabase'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { toast } from 'sonner'
 
 interface Product {
   id: string
@@ -26,6 +27,7 @@ interface Product {
 export default function ProductDetailPage() {
   const params = useParams()
   const productId = params.id as string
+  const router = useRouter()
   
   const [product, setProduct] = useState<Product | null>(null)
   const [loading, setLoading] = useState(true)
@@ -102,6 +104,24 @@ export default function ProductDetailPage() {
           category: product.category
         })
       }
+      toast.success('เพิ่มสินค้าในตะกร้าแล้ว')
+    }
+  }
+
+  const buyNow = () => {
+    if (product && quantity > 0 && product.in_stock) {
+      // Add to cart first
+      for (let i = 0; i < quantity; i++) {
+        addItem({
+          id: product.id,
+          name_th: product.name_th,
+          price: product.price,
+          image_url: product.image_url,
+          category: product.category
+        })
+      }
+      // Redirect to checkout
+      router.push('/checkout')
     }
   }
 
@@ -292,6 +312,8 @@ export default function ProductDetailPage() {
               <Button
                 variant="outline"
                 className="flex-1 border-green-700 text-green-700 hover:bg-green-50 py-3"
+                onClick={buyNow}
+                disabled={!product.in_stock}
               >
                 ซื้อเลย
               </Button>
