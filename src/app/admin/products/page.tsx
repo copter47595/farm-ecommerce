@@ -333,19 +333,20 @@ export default function AdminProducts() {
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="name">ชื่อสินค้า</Label>
+                  <Label htmlFor="name" className="text-[#5c5346]">ชื่อสินค้า</Label>
                   <Input
                     id="name"
                     value={formData.name_th}
                     onChange={(e) => setFormData(prev => ({ ...prev, name_th: e.target.value }))}
                     placeholder="กรอกชื่อสินค้า"
+                    className="border-[#e3dcc9] focus:border-[#5d6e45] focus:ring-[#5d6e45]"
                     required
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="price">ราคา</Label>
+                    <Label htmlFor="price" className="text-[#5c5346]">ราคา</Label>
                     <Input
                       id="price"
                       type="number"
@@ -354,6 +355,7 @@ export default function AdminProducts() {
                       value={formData.price}
                       onChange={(e) => setFormData(prev => ({ ...prev, price: e.target.value }))}
                       placeholder="0.00"
+                      className="border-[#e3dcc9] focus:border-[#5d6e45] focus:ring-[#5d6e45]"
                       required
                     />
                   </div>
@@ -365,17 +367,17 @@ export default function AdminProducts() {
                       onChange={(e) => setFormData(prev => ({ ...prev, in_stock: e.target.checked }))}
                       className="h-4 w-4 rounded border-[#e3dcc9] text-[#5d6e45] focus:ring-[#5d6e45]"
                     />
-                    <Label htmlFor="in_stock" className="cursor-pointer">มีสินค้าในสต็อก</Label>
+                    <Label htmlFor="in_stock" className="cursor-pointer text-[#5c5346]">มีสินค้าในสต็อก</Label>
                   </div>
                 </div>
 
                 <div>
-                  <Label htmlFor="category">หมวดหมู่</Label>
+                  <Label htmlFor="category" className="text-[#5c5346]">หมวดหมู่</Label>
                   <Select
                     value={formData.category}
                     onValueChange={(value) => setFormData(prev => ({ ...prev, category: value }))}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="border-[#e3dcc9]">
                       {formData.category || 'เลือกหมวดหมู่'}
                     </SelectTrigger>
                     <SelectContent>
@@ -389,19 +391,20 @@ export default function AdminProducts() {
                 </div>
 
                 <div>
-                  <Label htmlFor="description">คำอธิบาย</Label>
+                  <Label htmlFor="description" className="text-[#5c5346]">คำอธิบาย</Label>
                   <Textarea
                     id="description"
                     value={formData.description_th}
                     onChange={(e) => setFormData(prev => ({ ...prev, description_th: e.target.value }))}
                     placeholder="กรอกคำอธิบายสินค้า"
                     rows={3}
+                    className="border-[#e3dcc9] focus:border-[#5d6e45] focus:ring-[#5d6e45]"
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="image">รูปภาพ</Label>
+                  <Label htmlFor="image" className="text-[#5c5346]">รูปภาพ</Label>
                   <div className="mt-1">
                     <div className="flex items-center gap-2">
                       <Input
@@ -415,14 +418,14 @@ export default function AdminProducts() {
                         type="button"
                         variant="outline"
                         onClick={() => document.getElementById('image')?.click()}
-                        className="w-full"
+                        className="w-full border-[#e3dcc9] hover:border-[#5d6e45] hover:bg-[#f5f1e8]"
                       >
-                        <Upload className="w-4 h-4 mr-2" />
+                        <Upload className="w-4 h-4 mr-2 text-[#5d6e45]" />
                         {formData.image ? formData.image.name : (isEditing ? 'เปลี่ยนรูป (ถ้าต้องการ)' : 'เลือกรูปภาพ')}
                       </Button>
                     </div>
                     {!isEditing && (
-                      <p className="text-xs text-gray-500 mt-1">* จำเป็นสำหรับสินค้าใหม่</p>
+                      <p className="text-xs text-[#6b6b5e] mt-1">* จำเป็นสำหรับสินค้าใหม่</p>
                     )}
                   </div>
                 </div>
@@ -432,6 +435,7 @@ export default function AdminProducts() {
                     type="button"
                     variant="outline"
                     onClick={() => setIsModalOpen(false)}
+                    className="border-[#e3dcc9] hover:bg-[#f5f1e8]"
                   >
                     ยกเลิก
                   </Button>
