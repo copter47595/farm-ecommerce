@@ -49,10 +49,10 @@ interface CartItem {
 }
 
 const statusOptions = [
-  { value: 'รอตรวจสอบ', label: 'รอตรวจสอบ', color: 'bg-yellow-100 text-yellow-800' },
-  { value: 'ยืนยันแล้ว', label: 'ยืนยันแล้ว', color: 'bg-blue-100 text-blue-800' },
-  { value: 'จัดส่งแล้ว', label: 'จัดส่งแล้ว', color: 'bg-purple-100 text-purple-800' },
-  { value: 'เสร็จสิ้น', label: 'เสร็จสิ้น', color: 'bg-green-100 text-green-800' },
+  { value: 'รอตรวจสอบ', label: 'รอตรวจสอบ', color: 'bg-[#fef3c7] text-[#92400e]' },
+  { value: 'ยืนยันแล้ว', label: 'ยืนยันแล้ว', color: 'bg-[#dbeafe] text-[#1e40af]' },
+  { value: 'จัดส่งแล้ว', label: 'จัดส่งแล้ว', color: 'bg-[#f3e8ff] text-[#6b21a8]' },
+  { value: 'เสร็จสิ้น', label: 'เสร็จสิ้น', color: 'bg-[#e8e0d0] text-[#5d6e45]' },
 ]
 
 export default function AdminOrders() {
@@ -126,7 +126,7 @@ export default function AdminOrders() {
 
   function getStatusColor(status: string) {
     const option = statusOptions.find(opt => opt.value === status)
-    return option?.color || 'bg-gray-100 text-gray-800'
+    return option?.color || 'bg-[#f5f1e8] text-[#6b6b5e]'
   }
 
   function formatDate(dateString: string) {
