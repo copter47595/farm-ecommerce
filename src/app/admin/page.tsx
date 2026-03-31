@@ -91,28 +91,28 @@ export default function AdminDashboard() {
       title: 'ออเดอร์วันนี้',
       value: stats.todayOrders,
       icon: ShoppingBag,
-      color: 'bg-blue-500',
+      color: 'bg-[#5d6e45]',
       link: '/admin/orders'
     },
     {
       title: 'ยอดขายรวมเดือนนี้',
       value: `฿${stats.monthlyRevenue.toFixed(2)}`,
       icon: DollarSign,
-      color: 'bg-green-500',
+      color: 'bg-[#6b7b53]',
       link: '/admin/orders'
     },
     {
       title: 'สินค้าทั้งหมด',
       value: stats.totalProducts,
       icon: Package,
-      color: 'bg-purple-500',
+      color: 'bg-[#8a9a6b]',
       link: '/admin/products'
     },
     {
       title: 'สินค้าใกล้หมด',
       value: stats.lowStockProducts,
       icon: AlertTriangle,
-      color: 'bg-orange-500',
+      color: 'bg-[#c4705a]',
       link: '/admin/products'
     }
   ]
@@ -122,8 +122,8 @@ export default function AdminDashboard() {
       <AdminLayout>
         <div className="space-y-6">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">ภาพรวม</h1>
-            <p className="text-gray-600 mt-1">สถิติและข้อมูลสำคัญของร้านค้า</p>
+            <h1 className="text-3xl font-bold text-[#3d3b30]">ภาพรวม</h1>
+            <p className="text-[#5c5346] mt-1">สถิติและข้อมูลสำคัญของร้านค้า</p>
           </div>
 
           {/* Summary Cards */}
@@ -132,12 +132,12 @@ export default function AdminDashboard() {
               const Icon = card.icon
               return (
                 <Link key={card.title} href={card.link}>
-                  <Card className="hover:shadow-md transition-shadow cursor-pointer border-gray-200">
+                  <Card className="hover:shadow-md transition-shadow cursor-pointer border-[#e3dcc9] bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="text-sm font-medium text-gray-600">{card.title}</p>
-                          <p className="text-2xl font-bold text-gray-900 mt-2">
+                          <p className="text-sm font-medium text-[#5c5346]">{card.title}</p>
+                          <p className="text-2xl font-bold text-[#3d3b30] mt-2">
                             {loading ? '-' : card.value}
                           </p>
                         </div>
@@ -154,28 +154,28 @@ export default function AdminDashboard() {
 
           {/* Recent Activity Placeholder */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card className="border-gray-200">
+            <Card className="border-[#e3dcc9] bg-white">
               <CardHeader>
-                <h2 className="text-xl font-semibold text-gray-900">ออเดอร์ล่าสุด</h2>
+                <h2 className="text-xl font-semibold text-[#3d3b30]">ออเดอร์ล่าสุด</h2>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">ดูออเดอร์ล่าสุดได้ที่</p>
+                <p className="text-[#5c5346]">ดูออเดอร์ล่าสุดได้ที่</p>
                 <Link href="/admin/orders">
-                  <span className="text-green-700 hover:underline font-medium">
+                  <span className="text-[#5d6e45] hover:underline font-medium">
                     หน้าจัดการออเดอร์ →
                   </span>
                 </Link>
               </CardContent>
             </Card>
 
-            <Card className="border-gray-200">
+            <Card className="border-[#e3dcc9] bg-white">
               <CardHeader>
-                <h2 className="text-xl font-semibold text-gray-900">สินค้าขายดี</h2>
+                <h2 className="text-xl font-semibold text-[#3d3b30]">สินค้าขายดี</h2>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">จัดการสินค้าได้ที่</p>
+                <p className="text-[#5c5346]">จัดการสินค้าได้ที่</p>
                 <Link href="/admin/products">
-                  <span className="text-green-700 hover:underline font-medium">
+                  <span className="text-[#5d6e45] hover:underline font-medium">
                     หน้าจัดการสินค้า →
                   </span>
                 </Link>

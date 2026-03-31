@@ -232,21 +232,21 @@ export default function AdminProducts() {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">จัดการสินค้า</h1>
-              <p className="text-gray-600 mt-1">เพิ่ม แก้ไข และลบสินค้า</p>
+              <h1 className="text-3xl font-bold text-[#3d3b30]">จัดการสินค้า</h1>
+              <p className="text-[#5c5346] mt-1">เพิ่ม แก้ไข และลบสินค้า</p>
             </div>
             <div className="flex gap-2">
               <Button
                 variant="outline"
                 onClick={fetchProducts}
-                className="border-green-700 text-green-700 hover:bg-green-50"
+                className="border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0]"
               >
                 <RefreshCw className="w-4 h-4 mr-2" />
                 รีเฟรช
               </Button>
               <Button
                 onClick={openAddModal}
-                className="bg-green-700 hover:bg-green-800 text-white"
+                className="bg-[#5d6e45] hover:bg-[#4a5737] text-white"
               >
                 <Plus className="w-4 h-4 mr-2" />
                 เพิ่มสินค้า
@@ -254,12 +254,12 @@ export default function AdminProducts() {
             </div>
           </div>
 
-          <Card className="border-gray-200">
+          <Card className="border-[#e3dcc9] bg-white">
             <CardContent className="p-0">
               {loading ? (
-                <div className="p-8 text-center text-gray-600">กำลังโหลด...</div>
+                <div className="p-8 text-center text-[#5c5346]">กำลังโหลด...</div>
               ) : products.length === 0 ? (
-                <div className="p-8 text-center text-gray-600">ไม่มีสินค้า</div>
+                <div className="p-8 text-center text-[#5c5346]">ไม่มีสินค้า</div>
               ) : (
                 <div className="overflow-x-auto">
                   <Table>
@@ -277,19 +277,19 @@ export default function AdminProducts() {
                       {products.map((product) => (
                         <TableRow key={product.id}>
                           <TableCell>
-                            <div className="w-16 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded flex items-center justify-center">
-                              <span className="text-green-700 text-xs">รูป</span>
+                            <div className="w-16 h-12 bg-[#e8e0d0] rounded flex items-center justify-center">
+                              <span className="text-[#6b7b53] text-xs">รูป</span>
                             </div>
                           </TableCell>
                           <TableCell className="font-medium">{product.name_th}</TableCell>
                           <TableCell>฿{product.price.toFixed(2)}</TableCell>
                           <TableCell>
-                            <Badge variant="secondary" className="bg-green-100 text-green-800">
+                            <Badge variant="secondary" className="bg-[#e8e0d0] text-[#5d6e45]">
                               {product.category}
                             </Badge>
                           </TableCell>
                           <TableCell>
-                            <Badge variant={product.in_stock ? 'default' : 'destructive'}>
+                            <Badge variant={product.in_stock ? 'default' : 'destructive'} className={product.in_stock ? 'bg-[#5d6e45]' : 'bg-[#c4705a]'}>
                               {product.in_stock ? 'มีสินค้า' : 'หมด'}
                             </Badge>
                           </TableCell>
@@ -299,7 +299,7 @@ export default function AdminProducts() {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => openEditModal(product)}
-                                className="text-blue-600 hover:text-blue-800"
+                                className="text-[#5d6e45] hover:text-[#4a5737]"
                               >
                                 <Pencil className="w-4 h-4" />
                               </Button>
@@ -307,7 +307,7 @@ export default function AdminProducts() {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => openDeleteDialog(product)}
-                                className="text-red-600 hover:text-red-800"
+                                className="text-[#c4705a] hover:text-[#b35d48]"
                               >
                                 <Trash2 className="w-4 h-4" />
                               </Button>
@@ -363,7 +363,7 @@ export default function AdminProducts() {
                       id="in_stock"
                       checked={formData.in_stock}
                       onChange={(e) => setFormData(prev => ({ ...prev, in_stock: e.target.checked }))}
-                      className="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-500"
+                      className="h-4 w-4 rounded border-[#e3dcc9] text-[#5d6e45] focus:ring-[#5d6e45]"
                     />
                     <Label htmlFor="in_stock" className="cursor-pointer">มีสินค้าในสต็อก</Label>
                   </div>
@@ -438,7 +438,7 @@ export default function AdminProducts() {
                   <Button
                     type="submit"
                     disabled={isSubmitting || (!isEditing && !formData.image)}
-                    className="bg-green-700 hover:bg-green-800 text-white"
+                    className="bg-[#5d6e45] hover:bg-[#4a5737] text-white"
                   >
                     {isSubmitting ? 'กำลังบันทึก...' : 'บันทึก'}
                   </Button>

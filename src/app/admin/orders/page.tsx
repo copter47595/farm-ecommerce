@@ -145,25 +145,25 @@ export default function AdminOrders() {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">จัดการออเดอร์</h1>
-              <p className="text-gray-600 mt-1">ดูและจัดการคำสั่งซื้อทั้งหมด</p>
+              <h1 className="text-3xl font-bold text-[#3d3b30]">จัดการออเดอร์</h1>
+              <p className="text-[#5c5346] mt-1">ดูและจัดการคำสั่งซื้อทั้งหมด</p>
             </div>
             <Button
               variant="outline"
               onClick={fetchOrders}
-              className="border-green-700 text-green-700 hover:bg-green-50"
+              className="border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0]"
             >
               <RefreshCw className="w-4 h-4 mr-2" />
               รีเฟรช
             </Button>
           </div>
 
-          <Card className="border-gray-200">
+          <Card className="border-[#e3dcc9] bg-white">
             <CardContent className="p-0">
               {loading ? (
-                <div className="p-8 text-center text-gray-600">กำลังโหลด...</div>
+                <div className="p-8 text-center text-[#5c5346]">กำลังโหลด...</div>
               ) : orders.length === 0 ? (
-                <div className="p-8 text-center text-gray-600">ไม่มีออเดอร์</div>
+                <div className="p-8 text-center text-[#5c5346]">ไม่มีออเดอร์</div>
               ) : (
                 <div className="overflow-x-auto">
                   <Table>
@@ -186,7 +186,7 @@ export default function AdminOrders() {
                           </TableCell>
                           <TableCell>{order.name}</TableCell>
                           <TableCell>{order.phone}</TableCell>
-                          <TableCell className="font-medium">
+                          <TableCell className="font-medium text-[#5d6e45]">
                             ฿{order.total.toFixed(2)}
                           </TableCell>
                           <TableCell>
@@ -214,13 +214,13 @@ export default function AdminOrders() {
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => viewSlip(order)}
-                                className="text-green-700 hover:text-green-800"
+                                className="text-[#5d6e45] hover:text-[#4a5737]"
                               >
                                 <Eye className="w-4 h-4 mr-1" />
                                 ดูสลิป
                               </Button>
                             ) : (
-                              <span className="text-gray-400 text-sm">ไม่มีสลิป</span>
+                              <span className="text-[#6b6b5e] text-sm">ไม่มีสลิป</span>
                             )}
                           </TableCell>
                           <TableCell>
@@ -228,6 +228,7 @@ export default function AdminOrders() {
                               variant="ghost"
                               size="sm"
                               onClick={() => viewDetails(order)}
+                              className="text-[#5c5346] hover:text-[#5d6e45]"
                             >
                               ดูรายละเอียด
                             </Button>
@@ -256,7 +257,7 @@ export default function AdminOrders() {
                   />
                 </div>
               )}
-              <div className="text-center text-sm text-gray-600">
+              <div className="text-center text-sm text-[#5c5346]">
                 <p>ออเดอร์ #{selectedOrder?.id.slice(-8)}</p>
                 <p>ยอด: ฿{selectedOrder?.total.toFixed(2)}</p>
               </div>
@@ -273,33 +274,33 @@ export default function AdminOrders() {
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <p className="text-gray-600">ชื่อลูกค้า</p>
-                      <p className="font-medium">{selectedOrder.name}</p>
+                      <p className="text-[#5c5346]">ชื่อลูกค้า</p>
+                      <p className="font-medium text-[#3d3b30]">{selectedOrder.name}</p>
                     </div>
                     <div>
-                      <p className="text-gray-600">เบอร์โทร</p>
-                      <p className="font-medium">{selectedOrder.phone}</p>
+                      <p className="text-[#5c5346]">เบอร์โทร</p>
+                      <p className="font-medium text-[#3d3b30]">{selectedOrder.phone}</p>
                     </div>
                   </div>
                   
                   <div>
-                    <p className="text-gray-600 text-sm">ที่อยู่จัดส่ง</p>
-                    <p className="font-medium">{selectedOrder.address}</p>
+                    <p className="text-[#5c5346] text-sm">ที่อยู่จัดส่ง</p>
+                    <p className="font-medium text-[#3d3b30]">{selectedOrder.address}</p>
                   </div>
 
                   <div>
-                    <p className="text-gray-600 text-sm mb-2">รายการสินค้า</p>
-                    <div className="bg-gray-50 rounded-lg p-3 space-y-2">
+                    <p className="text-[#5c5346] text-sm mb-2">รายการสินค้า</p>
+                    <div className="bg-[#f5f1e8] rounded-lg p-3 space-y-2">
                       {selectedOrder.items.map((item, index) => (
                         <div key={index} className="flex justify-between text-sm">
-                          <span>{item.name_th} x{item.quantity}</span>
-                          <span>฿{(item.price * item.quantity).toFixed(2)}</span>
+                          <span className="text-[#3d3b30]">{item.name_th} x{item.quantity}</span>
+                          <span className="text-[#5d6e45]">฿{(item.price * item.quantity).toFixed(2)}</span>
                         </div>
                       ))}
-                      <div className="border-t border-gray-200 pt-2 mt-2">
+                      <div className="border-t border-[#e3dcc9] pt-2 mt-2">
                         <div className="flex justify-between font-medium">
-                          <span>ยอดรวม</span>
-                          <span>฿{selectedOrder.total.toFixed(2)}</span>
+                          <span className="text-[#3d3b30]">ยอดรวม</span>
+                          <span className="text-[#5d6e45]">฿{selectedOrder.total.toFixed(2)}</span>
                         </div>
                       </div>
                     </div>
