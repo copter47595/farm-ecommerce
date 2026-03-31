@@ -35,13 +35,13 @@ export default function AboutPage() {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-green-700 py-16 md:py-24">
+        <section className="bg-[#5d6e45] py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
                 ฟาร์มพึ่งหนุ่ม
               </h1>
-              <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-[#d1d7c3] max-w-3xl mx-auto leading-relaxed">
                 ฟาร์มอินทรีย์ที่มุ่งมั่นส่งมอบผลิตภัณฑ์คุณภาพจากฟาร์มถึงบ้านคุณ
                 ด้วยความใส่ใจในทุกขั้นตอนการผลิต
               </p>
@@ -55,10 +55,10 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Image */}
               <div className="relative">
-                <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center">
-                  <span className="text-green-700 text-lg font-medium">ภาพฟาร์ม</span>
+                <div className="aspect-[4/3] bg-[#e8e0d0] rounded-2xl flex items-center justify-center">
+                  <span className="text-[#5d6e45] text-lg font-medium">ภาพฟาร์ม</span>
                 </div>
-                <Badge className="absolute top-4 left-4 bg-green-700 text-white">
+                <Badge className="absolute top-4 left-4 bg-[#5d6e45] text-white">
                   <Award className="w-4 h-4 mr-1" />
                   ก่อตั้ง 2020
                 </Badge>
@@ -107,15 +107,15 @@ export default function AboutPage() {
               {values.map((value, index) => {
                 const Icon = value.icon
                 return (
-                  <Card key={index} className="border-gray-200 hover:shadow-lg transition-shadow">
+                  <Card key={index} className="border-[#e3dcc9] hover:shadow-lg transition-shadow bg-[#faf8f3]">
                     <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Icon className="w-8 h-8 text-green-700" />
+                      <div className="w-16 h-16 bg-[#e8e0d0] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Icon className="w-8 h-8 text-[#5d6e45]" />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-xl font-bold text-[#3d3b30] mb-3">
                         {value.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-[#5c5346] leading-relaxed">
                         {value.description}
                       </p>
                     </CardContent>
@@ -140,17 +140,17 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Founder 1 */}
-              <Card className="border-gray-200">
+              <Card className="border-[#e3dcc9] bg-white">
                 <CardContent className="p-8">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mb-6">
-                      <Users className="w-12 h-12 text-green-700" />
+                    <div className="w-32 h-32 bg-[#e8e0d0] rounded-full flex items-center justify-center mb-6">
+                      <Users className="w-12 h-12 text-[#5d6e45]" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-[#3d3b30] mb-2">
                       คุณพึ่ง
                     </h3>
-                    <p className="text-green-700 font-medium mb-3">ผู้ก่อตั้ง</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-[#5d6e45] font-medium mb-3">ผู้ก่อตั้ง</p>
+                    <p className="text-[#5c5346] text-sm leading-relaxed">
                       เริ่มต้นจากความรักในการปลูกผักและต้องการให้ครอบครัวได้กินอาหารที่ปลอดภัย 
                       จึงก่อตั้งฟาร์มพึ่งหนุ่มขึ้นมาด้วยความตั้งใจ
                     </p>
@@ -159,17 +159,17 @@ export default function AboutPage() {
               </Card>
 
               {/* Founder 2 */}
-              <Card className="border-gray-200">
+              <Card className="border-[#e3dcc9] bg-white">
                 <CardContent className="p-8">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mb-6">
-                      <MapPin className="w-12 h-12 text-green-700" />
+                    <div className="w-32 h-32 bg-[#e8e0d0] rounded-full flex items-center justify-center mb-6">
+                      <MapPin className="w-12 h-12 text-[#5d6e45]" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-[#3d3b30] mb-2">
                       คุณหนุ่ม
                     </h3>
-                    <p className="text-green-700 font-medium mb-3">ผู้ก่อตั้ง</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-[#5d6e45] font-medium mb-3">ผู้ก่อตั้ง</p>
+                    <p className="text-[#5c5346] text-sm leading-relaxed">
                       ดูแลการจัดการฟาร์มและพัฒนาระบบการผลิตให้มีประสิทธิภาพ 
                       พร้อมทั้งค้นคว้าเทคนิคใหม่ๆ ในการปลูกพืชแบบอินทรีย์
                     </p>
@@ -181,24 +181,24 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 md:py-24 bg-green-700">
+        <section className="py-16 md:py-24 bg-[#5d6e45]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-white mb-2">5+</p>
-                <p className="text-green-100">ปีของการดำเนินงาน</p>
+                <p className="text-[#d1d7c3]">ปีของการดำเนินงาน</p>
               </div>
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-white mb-2">1000+</p>
-                <p className="text-green-100">ครอบครัวที่ให้ความไว้วางใจ</p>
+                <p className="text-[#d1d7c3]">ครอบครัวที่ให้ความไว้วางใจ</p>
               </div>
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-white mb-2">50+</p>
-                <p className="text-green-100">ไร่ของพื้นที่ปลูก</p>
+                <p className="text-[#d1d7c3]">ไร่ของพื้นที่ปลูก</p>
               </div>
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-white mb-2">20+</p>
-                <p className="text-green-100">ชนิดของผลิตภัณฑ์</p>
+                <p className="text-[#d1d7c3]">ชนิดของผลิตภัณฑ์</p>
               </div>
             </div>
           </div>

@@ -45,9 +45,9 @@ export default function CheckoutPage() {
         <Navbar />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">ตะกร้าของคุณว่างเปล่า</h1>
+            <h1 className="text-2xl font-bold text-[#3d3b30] mb-4">ตะกร้าของคุณว่างเปล่า</h1>
             <Link href="/products">
-              <Button className="bg-green-700 hover:bg-green-800 text-white">
+              <Button className="bg-[#5d6e45] hover:bg-[#4a5737] text-white">
                 เลือกซื้อสินค้า
               </Button>
             </Link>
@@ -178,9 +178,9 @@ export default function CheckoutPage() {
               return (
                 <div key={step.id} className="flex items-center">
                   <div className={`flex items-center space-x-2 px-4 py-2 rounded-full ${
-                    isActive ? 'bg-green-700 text-white' :
-                    isCompleted ? 'bg-green-100 text-green-700' :
-                    'bg-gray-200 text-gray-500'
+                    isActive ? 'bg-[#5d6e45] text-white' :
+                    isCompleted ? 'bg-[#e8e0d0] text-[#5d6e45]' :
+                    'bg-[#f5f1e8] text-[#6b6b5e]'
                   }`}>
                     <Icon className="w-4 h-4" />
                     <span className="text-sm font-medium hidden sm:inline">{step.label}</span>
@@ -255,9 +255,9 @@ export default function CheckoutPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 {/* Total Amount */}
-                <div className="bg-green-50 p-4 rounded-lg text-center">
-                  <p className="text-gray-600 mb-1">ยอดที่ต้องชำระ</p>
-                  <p className="text-3xl font-bold text-green-700">
+                <div className="bg-[#f5f1e8] p-4 rounded-lg text-center">
+                  <p className="text-[#5c5346] mb-1">ยอดที่ต้องชำระ</p>
+                  <p className="text-3xl font-bold text-[#5d6e45]">
                     ฿{totalPrice.toFixed(2)}
                   </p>
                 </div>
@@ -288,21 +288,21 @@ export default function CheckoutPage() {
                     onClick={() => fileInputRef.current?.click()}
                     className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
                       errors.slip ? 'border-red-500 bg-red-50' :
-                      slipPreview ? 'border-green-500 bg-green-50' :
-                      'border-gray-300 hover:border-green-500 hover:bg-green-50'
+                      slipPreview ? 'border-[#5d6e45] bg-[#e8ebe0]' :
+                      'border-[#e3dcc9] hover:border-[#5d6e45] hover:bg-[#f5f1e8]'
                     }`}
                   >
                     {slipPreview ? (
                       <div className="space-y-2">
                         <img src={slipPreview} alt="Slip preview" className="max-h-48 mx-auto rounded" />
-                        <p className="text-green-600 font-medium">{slipFile?.name}</p>
-                        <p className="text-sm text-gray-500">คลิกเพื่อเปลี่ยนรูป</p>
+                        <p className="text-[#5d6e45] font-medium">{slipFile?.name}</p>
+                        <p className="text-sm text-[#5c5346]">คลิกเพื่อเปลี่ยนรูป</p>
                       </div>
                     ) : (
                       <div className="space-y-2">
-                        <Upload className="w-12 h-12 text-gray-400 mx-auto" />
-                        <p className="text-gray-600">ลากไฟล์มาวางที่นี่ หรือคลิกเพื่อเลือกไฟล์</p>
-                        <p className="text-sm text-gray-400">รองรับไฟล์รูปภาพ JPG, PNG</p>
+                        <Upload className="w-12 h-12 text-[#b3bfa0] mx-auto" />
+                        <p className="text-[#5c5346]">ลากไฟล์มาวางที่นี่ หรือคลิกเพื่อเลือกไฟล์</p>
+                        <p className="text-sm text-[#6b6b5e]">รองรับไฟล์รูปภาพ JPG, PNG</p>
                       </div>
                     )}
                     <input
@@ -344,8 +344,8 @@ export default function CheckoutPage() {
                 <Separator />
 
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-gray-900">ยอดรวม</span>
-                  <span className="text-2xl font-bold text-green-700">
+                  <span className="text-lg font-semibold text-[#3d3b30]">ยอดรวม</span>
+                  <span className="text-2xl font-bold text-[#5d6e45]">
                     ฿{totalPrice.toFixed(2)}
                   </span>
                 </div>
@@ -353,7 +353,7 @@ export default function CheckoutPage() {
                 <Button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="w-full bg-green-700 hover:bg-green-800 text-white py-3"
+                  className="w-full bg-[#5d6e45] hover:bg-[#4a5737] text-white py-3"
                 >
                   {isSubmitting ? (
                     'กำลังประมวลผล...'

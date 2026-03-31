@@ -168,7 +168,7 @@ export default function FeaturedProducts() {
                 <div className="flex items-center gap-1 mb-4">
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#d4cbb3] text-[#d4cbb3]" />
+                      <Star key={i} className="w-4 h-4 fill-[#b3bfa0] text-[#b3bfa0]" />
                     ))}
                   </div>
                   <span className="text-sm text-[#6b6b5e]">(5.0)</span>

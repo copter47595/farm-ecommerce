@@ -173,8 +173,8 @@ export default function ProductsPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">สินค้าทั้งหมด</h1>
-          <p className="text-gray-600 text-lg">เลือกซื้อสินค้าคุณภาพจากฟาร์มของเรา</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-[#3d3b30] mb-4">สินค้าทั้งหมด</h1>
+          <p className="text-[#5c5346] text-lg">เลือกซื้อสินค้าคุณภาพจากฟาร์มของเรา</p>
         </div>
 
         {/* Category Filter Tabs */}
@@ -187,8 +187,8 @@ export default function ProductsPage() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`rounded-md ${
                   selectedCategory === category.id
-                    ? 'bg-green-700 hover:bg-green-800 text-white'
-                    : 'border-green-700 text-green-700 hover:bg-green-50'
+                    ? 'bg-[#5d6e45] hover:bg-[#4a5737] text-white'
+                    : 'border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0]'
                 }`}
               >
                 {category.name}
@@ -219,12 +219,12 @@ export default function ProductsPage() {
                 <CardContent className="p-0">
                   {/* Product Image */}
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                      <span className="text-green-700 font-medium">ภาพสินค้า</span>
+                    <div className="w-full aspect-[4/3] bg-[#e8e0d0] flex items-center justify-center">
+                      <span className="text-[#5d6e45] font-medium">ภาพสินค้า</span>
                     </div>
                     <Badge 
                       variant="secondary" 
-                      className="absolute top-2 left-2 bg-white/90 text-green-700"
+                      className="absolute top-2 left-2 bg-[#faf8f3]/90 text-[#5d6e45]"
                     >
                       {product.category}
                     </Badge>
@@ -232,17 +232,17 @@ export default function ProductsPage() {
 
                   {/* Product Info */}
                   <div className="p-4">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-green-700 transition-colors line-clamp-1">
+                    <h3 className="font-semibold text-lg text-[#3d3b30] mb-2 group-hover:text-[#5d6e45] transition-colors line-clamp-1">
                       {product.name_th}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                    <p className="text-[#5c5346] text-sm mb-3 line-clamp-2">
                       {product.description_th}
                     </p>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-2xl font-bold text-green-700">
+                      <span className="text-2xl font-bold text-[#5d6e45]">
                         ฿{product.price.toFixed(2)}
                       </span>
-                      <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                      <Badge variant="secondary" className="bg-[#e8ebe0] text-[#4a5737] text-xs">
                         มีสินค้า
                       </Badge>
                     </div>
@@ -252,7 +252,7 @@ export default function ProductsPage() {
                 <CardFooter className="p-4 pt-0">
                   <div className="flex gap-2 w-full">
                     <Button 
-                      className="flex-1 bg-green-700 hover:bg-green-800 text-white"
+                      className="flex-1 bg-[#5d6e45] hover:bg-[#4a5737] text-white"
                       onClick={() => addToCart(product)}
                     >
                       <ShoppingCart className="w-4 h-4 mr-2" />
@@ -261,7 +261,7 @@ export default function ProductsPage() {
                     <Link href={`/products/${product.id}`} className="flex-1">
                       <Button 
                         variant="outline" 
-                        className="w-full border-green-700 text-green-700 hover:bg-green-50"
+                        className="w-full border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0]"
                       >
                         ดูรายละเอียด
                       </Button>

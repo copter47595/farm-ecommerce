@@ -163,10 +163,10 @@ export default function ProductDetailPage() {
         <Navbar />
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center py-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">ไม่พบสินค้า</h2>
-            <p className="text-gray-600 mb-8">สินค้าที่คุณค้นหาไม่มีอยู่ในระบบ</p>
+            <h2 className="text-2xl font-bold text-[#3d3b30] mb-4">ไม่พบสินค้า</h2>
+            <p className="text-[#5c5346] mb-8">สินค้าที่คุณค้นหาไม่มีอยู่ในระบบ</p>
             <Link href="/products">
-              <Button className="bg-green-700 hover:bg-green-800 text-white">
+              <Button className="bg-[#5d6e45] hover:bg-[#4a5737] text-white">
                 กลับไปดูสินค้า
               </Button>
             </Link>
@@ -183,7 +183,7 @@ export default function ProductDetailPage() {
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back Button */}
-        <Link href="/products" className="inline-flex items-center text-green-700 hover:text-green-800 mb-6">
+        <Link href="/products" className="inline-flex items-center text-[#5d6e45] hover:text-[#4a5737] mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" />
           กลับไปดูสินค้า
         </Link>
@@ -193,8 +193,8 @@ export default function ProductDetailPage() {
           <div className="space-y-4">
             <Card className="border-gray-200 overflow-hidden">
               <CardContent className="p-0">
-                <div className="w-full aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center rounded-lg">
-                  <span className="text-green-700 font-medium text-lg">ภาพสินค้า</span>
+                <div className="w-full aspect-[4/3] bg-[#e8e0d0] flex items-center justify-center rounded-lg">
+                  <span className="text-[#5d6e45] font-medium text-lg">ภาพสินค้า</span>
                 </div>
               </CardContent>
             </Card>
@@ -202,8 +202,8 @@ export default function ProductDetailPage() {
             {/* Small thumbnails */}
             <div className="grid grid-cols-4 gap-2">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="aspect-square bg-gradient-to-br from-green-50 to-green-100 rounded-lg flex items-center justify-center">
-                  <span className="text-green-600 text-xs">รูป {i}</span>
+                <div key={i} className="aspect-square bg-[#e8e0d0] rounded-lg flex items-center justify-center">
+                  <span className="text-[#6b7b53] text-xs">รูป {i}</span>
                 </div>
               ))}
             </div>
@@ -214,15 +214,15 @@ export default function ProductDetailPage() {
             {/* Header */}
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <Badge variant="secondary" className="bg-green-100 text-green-800">
+                <Badge variant="secondary" className="bg-[#e8e0d0] text-[#5d6e45]">
                   {product.category}
                 </Badge>
                 {product.in_stock ? (
-                  <Badge variant="secondary" className="bg-green-100 text-green-800">
+                  <Badge variant="secondary" className="bg-[#e8e0d0] text-[#5d6e45]">
                     มีสินค้า
                   </Badge>
                 ) : (
-                  <Badge variant="destructive">หมดสต็อก</Badge>
+                  <Badge variant="destructive" className="bg-[#c4705a]">หมดสต็อก</Badge>
                 )}
               </div>
               
@@ -234,14 +234,14 @@ export default function ProductDetailPage() {
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 fill-[#b3bfa0] text-[#b3bfa0]" />
                   ))}
                 </div>
-                <span className="text-gray-600">(5.0) • 15 รีวิว</span>
+                <span className="text-[#5c5346]">(5.0) • 15 รีวิว</span>
               </div>
 
               {/* Price */}
-              <div className="text-3xl font-bold text-green-700 mb-6">
+              <div className="text-3xl font-bold text-[#5d6e45] mb-6">
                 ฿{product.price.toFixed(2)}
               </div>
             </div>
@@ -255,10 +255,10 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Stock Info */}
-            <div className="bg-gray-50 p-4 rounded-lg">
+            <div className="bg-[#f5f1e8] p-4 rounded-lg">
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">สถานะสินค้า:</span>
-                <span className="font-semibold text-green-700">
+                <span className="text-[#5c5346]">สถานะสินค้า:</span>
+                <span className="font-semibold text-[#5d6e45]">
                   {product.in_stock ? 'มีสินค้า' : 'หมดสต็อก'}
                 </span>
               </div>
@@ -302,7 +302,7 @@ export default function ProductDetailPage() {
             {/* Action Buttons */}
             <div className="flex gap-4">
               <Button
-                className="flex-1 bg-green-700 hover:bg-green-800 text-white py-3"
+                className="flex-1 bg-[#5d6e45] hover:bg-[#4a5737] text-white py-3"
                 onClick={addToCart}
                 disabled={!product.in_stock}
               >
@@ -311,7 +311,7 @@ export default function ProductDetailPage() {
               </Button>
               <Button
                 variant="outline"
-                className="flex-1 border-green-700 text-green-700 hover:bg-green-50 py-3"
+                className="flex-1 border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0] py-3"
                 onClick={buyNow}
                 disabled={!product.in_stock}
               >
@@ -320,24 +320,24 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Additional Info */}
-            <div className="border-t border-gray-200 pt-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">ข้อมูลเพิ่มเติม</h3>
+            <div className="border-t border-[#e3dcc9] pt-6">
+              <h3 className="text-lg font-semibold text-[#3d3b30] mb-4">ข้อมูลเพิ่มเติม</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex">
-                  <span className="text-gray-600 w-24">วันที่ผลิต:</span>
-                  <span className="text-gray-900">28/03/2026</span>
+                  <span className="text-[#5c5346] w-24">วันที่ผลิต:</span>
+                  <span className="text-[#3d3b30]">28/03/2026</span>
                 </div>
                 <div className="flex">
-                  <span className="text-gray-600 w-24">วันหมดอายุ:</span>
-                  <span className="text-gray-900">04/04/2026</span>
+                  <span className="text-[#5c5346] w-24">วันหมดอายุ:</span>
+                  <span className="text-[#3d3b30]">04/04/2026</span>
                 </div>
                 <div className="flex">
-                  <span className="text-gray-600 w-24">ขนส่ง:</span>
-                  <span className="text-gray-900">ส่งฟรีเมื่อซื้อครบ 500 บาท</span>
+                  <span className="text-[#5c5346] w-24">ขนส่ง:</span>
+                  <span className="text-[#3d3b30]">ส่งฟรีเมื่อซื้อครบ 500 บาท</span>
                 </div>
                 <div className="flex">
-                  <span className="text-gray-600 w-24">การจัดเก็บ:</span>
-                  <span className="text-gray-900">เก็บในตู้เย็น 2-4°C</span>
+                  <span className="text-[#5c5346] w-24">การจัดเก็บ:</span>
+                  <span className="text-[#3d3b30]">เก็บในตู้เย็น 2-4°C</span>
                 </div>
               </div>
             </div>

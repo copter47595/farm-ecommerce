@@ -21,10 +21,10 @@ export default function CartPage() {
             <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
               <ShoppingCart className="w-12 h-12 text-gray-400" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">ตะกร้าของคุณว่างเปล่า</h1>
-            <p className="text-gray-600 mb-8">เริ่มช้อปปิ้งสินค้าจากฟาร์มของเรา</p>
+            <h1 className="text-2xl font-bold text-[#3d3b30] mb-4">ตะกร้าของคุณว่างเปล่า</h1>
+            <p className="text-[#5c5346] mb-8">เริ่มช้อปปิ้งสินค้าจากฟาร์มของเรา</p>
             <Link href="/products">
-              <Button className="bg-green-700 hover:bg-green-800 text-white px-8">
+              <Button className="bg-[#5d6e45] hover:bg-[#4a5737] text-white px-8">
                 ดูสินค้าทั้งหมด
               </Button>
             </Link>
@@ -39,30 +39,30 @@ export default function CartPage() {
     <div className="min-h-screen bg-[#fdf6ec]">
       <Navbar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">ตะกร้าสินค้า</h1>
+        <h1 className="text-3xl font-bold text-[#3d3b30] mb-8">ตะกร้าสินค้า</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {items.map((item) => (
-              <Card key={item.id} className="border-gray-200">
+              <Card key={item.id} className="border-[#e3dcc9]">
                 <CardContent className="p-4">
                   <div className="flex gap-4">
                     {/* Product Image */}
-                    <div className="w-24 h-24 flex-shrink-0 bg-gradient-to-br from-green-100 to-green-200 rounded-lg flex items-center justify-center">
-                      <span className="text-green-700 text-xs text-center">ภาพสินค้า</span>
+                    <div className="w-24 h-24 flex-shrink-0 bg-[#e8e0d0] rounded-lg flex items-center justify-center">
+                      <span className="text-[#6b7b53] text-xs text-center">ภาพสินค้า</span>
                     </div>
 
                     {/* Product Details */}
                     <div className="flex-1">
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <h3 className="font-semibold text-gray-900">{item.name_th}</h3>
-                          <p className="text-sm text-gray-500">{item.category}</p>
+                          <h3 className="font-semibold text-[#3d3b30]">{item.name_th}</h3>
+                          <p className="text-sm text-[#5c5346]">{item.category}</p>
                         </div>
                         <button
                           onClick={() => removeItem(item.id)}
-                          className="text-red-500 hover:text-red-700 p-1"
+                          className="text-[#c4705a] hover:text-[#b35d48] p-1"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -70,7 +70,7 @@ export default function CartPage() {
 
                       <div className="flex justify-between items-center mt-4">
                         {/* Quantity Controls */}
-                        <div className="flex items-center border border-gray-300 rounded-md">
+                        <div className="flex items-center border border-[#e3dcc9] rounded-md">
                           <Button
                             variant="ghost"
                             size="sm"
@@ -92,10 +92,10 @@ export default function CartPage() {
 
                         {/* Price */}
                         <div className="text-right">
-                          <p className="font-semibold text-gray-900">
+                          <p className="font-semibold text-[#3d3b30]">
                             ฿{(item.price * item.quantity).toFixed(2)}
                           </p>
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-[#5c5346]">
                             ฿{item.price.toFixed(2)} / ชิ้น
                           </p>
                         </div>
@@ -107,7 +107,7 @@ export default function CartPage() {
             ))}
 
             <Link href="/products">
-              <Button variant="outline" className="border-green-700 text-green-700 hover:bg-green-50">
+              <Button variant="outline" className="border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0]">
                 ← เลือกซื้อสินค้าเพิ่ม
               </Button>
             </Link>
@@ -115,31 +115,31 @@ export default function CartPage() {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <Card className="border-gray-200 sticky top-24">
+            <Card className="border-[#e3dcc9] sticky top-24">
               <CardHeader>
-                <h2 className="text-xl font-semibold text-gray-900">สรุปคำสั่งซื้อ</h2>
+                <h2 className="text-xl font-semibold text-[#3d3b30]">สรุปคำสั่งซื้อ</h2>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex justify-between text-gray-600">
+                <div className="flex justify-between text-[#5c5346]">
                   <span>จำนวนสินค้า ({totalItems} ชิ้น)</span>
                 </div>
                 
-                <Separator />
+                <Separator className="bg-[#e3dcc9]" />
 
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-gray-900">ยอดรวม</span>
-                  <span className="text-2xl font-bold text-green-700">
+                  <span className="text-lg font-semibold text-[#3d3b30]">ยอดรวม</span>
+                  <span className="text-2xl font-bold text-[#5d6e45]">
                     ฿{totalPrice.toFixed(2)}
                   </span>
                 </div>
 
                 <Link href="/checkout">
-                  <Button className="w-full bg-green-700 hover:bg-green-800 text-white py-3">
+                  <Button className="w-full bg-[#5d6e45] hover:bg-[#4a5737] text-white py-3">
                     ดำเนินการชำระเงิน
                   </Button>
                 </Link>
 
-                <p className="text-xs text-gray-500 text-center">
+                <p className="text-xs text-[#5c5346] text-center">
                   ค่าจัดส่งจะถูกคำนวณในขั้นตอนถัดไป
                 </p>
               </CardContent>

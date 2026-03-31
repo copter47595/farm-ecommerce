@@ -17,13 +17,13 @@ export default function ContactPage() {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-green-700 py-16 md:py-24">
+        <section className="bg-[#5d6e45] py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
                 ติดต่อเรา
               </h1>
-              <p className="text-xl text-green-100 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-[#d1d7c3] max-w-3xl mx-auto leading-relaxed">
                 มีคำถามหรือต้องการสอบถามข้อมูล? ติดต่อเราได้ทุกช่องทาง
                 ทีมงานยินดีให้บริการ
               </p>
@@ -50,15 +50,15 @@ export default function ContactPage() {
                 </h2>
 
                 <div className="space-y-6">
-                  <Card className="border-gray-200">
+                  <Card className="border-[#e3dcc9] bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MapPin className="w-6 h-6 text-green-700" />
+                        <div className="w-12 h-12 bg-[#e8e0d0] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-6 h-6 text-[#5d6e45]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">ที่อยู่ฟาร์ม</h3>
-                          <p className="text-gray-600">
+                          <h3 className="font-semibold text-[#3d3b30] mb-1">ที่อยู่ฟาร์ม</h3>
+                          <p className="text-[#5c5346]">
                             123 หมู่ 4 ต.ทุ่งสองห้อง<br />
                             อ.เมือง จ.ขอนแก่น 40000
                           </p>
@@ -67,30 +67,30 @@ export default function ContactPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-gray-200">
+                  <Card className="border-[#e3dcc9] bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Phone className="w-6 h-6 text-green-700" />
+                        <div className="w-12 h-12 bg-[#e8e0d0] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Phone className="w-6 h-6 text-[#5d6e45]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">เบอร์โทรศัพท์</h3>
-                          <p className="text-gray-600">089-123-4567</p>
+                          <h3 className="font-semibold text-[#3d3b30] mb-1">เบอร์โทรศัพท์</h3>
+                          <p className="text-[#5c5346]">089-123-4567</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <Card className="border-gray-200">
+                  <Card className="border-[#e3dcc9] bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MessageCircle className="w-6 h-6 text-green-700" />
+                        <div className="w-12 h-12 bg-[#e8e0d0] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <MessageCircle className="w-6 h-6 text-[#5d6e45]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">Line ID</h3>
-                          <p className="text-gray-600">@farmpeangnum</p>
-                          <p className="text-sm text-gray-500 mt-1">
+                          <h3 className="font-semibold text-[#3d3b30] mb-1">Line ID</h3>
+                          <p className="text-[#5c5346]">@farmpeangnum</p>
+                          <p className="text-sm text-[#6b6b5e] mt-1">
                             แอดไลน์เพื่อรับข่าวสารและโปรโมชั่น
                           </p>
                         </div>
@@ -98,15 +98,15 @@ export default function ContactPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-gray-200">
+                  <Card className="border-[#e3dcc9] bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Clock className="w-6 h-6 text-green-700" />
+                        <div className="w-12 h-12 bg-[#e8e0d0] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Clock className="w-6 h-6 text-[#5d6e45]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">เวลาทำการ</h3>
-                          <div className="text-gray-600 space-y-1">
+                          <h3 className="font-semibold text-[#3d3b30] mb-1">เวลาทำการ</h3>
+                          <div className="text-[#5c5346] space-y-1">
                             <p>จันทร์ - เสาร์: 08:00 - 18:00 น.</p>
                             <p>อาทิตย์: 08:00 - 12:00 น.</p>
                           </div>
