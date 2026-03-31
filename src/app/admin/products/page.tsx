@@ -465,6 +465,7 @@ export default function AdminProducts() {
                 <Button
                   variant="outline"
                   onClick={() => setIsDeleteDialogOpen(false)}
+                  className="border-[#e3dcc9] hover:bg-[#f5f1e8]"
                 >
                   ยกเลิก
                 </Button>
