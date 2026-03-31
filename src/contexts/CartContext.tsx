@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react'
 import { toast } from 'sonner'
 
 export interface CartItem {
@@ -26,7 +26,6 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>(() => {
-    // Initialize from localStorage on first render
     if (typeof window !== 'undefined') {
       try {
         const savedCart = localStorage.getItem('cart')
@@ -38,7 +37,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     return []
   })
 
-  // Save to localStorage whenever items change
+  // Ref to track if toast has been shown for current add action
+  const toastShownRef = useRef(false)
+
   useEffect(() => {
     try {
       localStorage.setItem('cart', JSON.stringify(items))
@@ -48,6 +49,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items])
 
   const addItem = (newItem: Omit<CartItem, 'quantity'>) => {
+    // Prevent duplicate toasts from React Strict Mode double-mounting
+    if (toastShownRef.current) return
+    toastShownRef.current = true
+
     setItems((currentItems) => {
       const existingItem = currentItems.find((item) => item.id === newItem.id)
       if (existingItem) {
@@ -65,6 +70,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
       })
       return [...currentItems, { ...newItem, quantity: 1 }]
     })
+
+    // Reset the ref after a short delay to allow future add actions
+    setTimeout(() => {
+      toastShownRef.current = false
+    }, 100)
   }
 
   const removeItem = (id: string) => {
