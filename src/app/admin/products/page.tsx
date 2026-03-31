@@ -470,7 +470,7 @@ export default function AdminProducts() {
                 </Button>
                 <Button
                   onClick={handleDelete}
-                  className="bg-red-600 hover:bg-red-700 text-white"
+                  className="bg-[#c4705a] hover:bg-[#b35d48] text-white"
                 >
                   ลบสินค้า
                 </Button>
