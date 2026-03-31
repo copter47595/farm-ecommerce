@@ -3,16 +3,19 @@ import { Heart, Leaf, Users } from 'lucide-react'
 
 export default function About() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              เกี่ยวกับ <span className="text-green-700">ฟาร์มพึ่งหนุ่ม</span>
+            <span className="text-[#5d6e45] font-medium text-sm tracking-wider uppercase mb-3 block">
+              Our Story
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#3d3b30] mb-8 leading-tight">
+              เกี่ยวกับ <span className="text-[#5d6e45]">ฟาร์มพึ่งหนุ่ม</span>
             </h2>
             
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="space-y-5 text-[#5c5346] leading-relaxed">
               <p className="text-lg">
                 ฟาร์มพึ่งหนุ่มเกิดจากความหลงใหลในการเพาะปลูกสินค้าคุณภาพเยี่ยม 
                 ด้วยประสบการณ์มากกว่า 10 ปี เรามุ่งมั่นในการผลิตผักและผลไม้สดใหม่ 
@@ -32,34 +35,34 @@ export default function About() {
             </div>
 
             {/* Values */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <Card className="text-center p-4 border-green-200">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+              <Card className="text-center p-5 border-[#e3dcc9] bg-[#faf8f3] rounded-2xl">
                 <CardContent className="p-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Heart className="w-6 h-6 text-green-700" />
+                  <div className="w-14 h-14 bg-[#e8ebe0] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-7 h-7 text-[#c4705a]" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">เลี้ยงใจ</h3>
-                  <p className="text-sm text-gray-600">ดูแลด้วยใจจริง</p>
+                  <h3 className="font-semibold text-[#3d3b30] mb-1">เลี้ยงใจ</h3>
+                  <p className="text-sm text-[#5c5346]">ดูแลด้วยใจจริง</p>
                 </CardContent>
               </Card>
 
-              <Card className="text-center p-4 border-green-200">
+              <Card className="text-center p-5 border-[#e3dcc9] bg-[#faf8f3] rounded-2xl">
                 <CardContent className="p-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Leaf className="w-6 h-6 text-green-700" />
+                  <div className="w-14 h-14 bg-[#e8ebe0] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Leaf className="w-7 h-7 text-[#5d6e45]" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">ธรรมชาติ</h3>
-                  <p className="text-sm text-gray-600">ปลอดสารพิษ</p>
+                  <h3 className="font-semibold text-[#3d3b30] mb-1">ธรรมชาติ</h3>
+                  <p className="text-sm text-[#5c5346]">ปลอดสารพิษ</p>
                 </CardContent>
               </Card>
 
-              <Card className="text-center p-4 border-green-200">
+              <Card className="text-center p-5 border-[#e3dcc9] bg-[#faf8f3] rounded-2xl">
                 <CardContent className="p-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Users className="w-6 h-6 text-green-700" />
+                  <div className="w-14 h-14 bg-[#e8ebe0] rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-7 h-7 text-[#5d6e45]" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">ความไว้วางใจ</h3>
-                  <p className="text-sm text-gray-600">เชื่อถือได้</p>
+                  <h3 className="font-semibold text-[#3d3b30] mb-1">ความไว้วางใจ</h3>
+                  <p className="text-sm text-[#5c5346]">เชื่อถือได้</p>
                 </CardContent>
               </Card>
             </div>
@@ -67,39 +70,39 @@ export default function About() {
 
           {/* Image */}
           <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+            <div className="aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-[#e8ebe0] to-[#d1d7c3] flex items-center justify-center">
               <div className="text-center p-8">
-                <div className="w-24 h-24 bg-green-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-3xl font-bold">ฟ</span>
+                <div className="w-28 h-28 bg-[#5d6e45] rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_8px_32px_-8px_rgba(93,110,69,0.3)]">
+                  <span className="text-white text-4xl font-bold">ฟ</span>
                 </div>
-                <p className="text-green-700 font-medium">ภาพฟาร์มของเรา</p>
-                <p className="text-green-600 text-sm mt-2">สวยงามและเป็นธรรมชาติ</p>
+                <p className="text-[#5d6e45] font-medium text-lg">ภาพฟาร์มของเรา</p>
+                <p className="text-[#6b7b53] text-sm mt-2">สวยงามและเป็นธรรมชาติ</p>
               </div>
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-green-100 rounded-full opacity-50"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-green-50 rounded-full opacity-50"></div>
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#e8ebe0] rounded-full opacity-60"></div>
+            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-[#f5f1e8] rounded-full opacity-60"></div>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-4xl font-bold text-green-700 mb-2">10+</div>
-            <div className="text-gray-600">ปีประสบการณ์</div>
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="p-6 bg-[#faf8f3] rounded-2xl">
+            <div className="text-4xl font-bold text-[#5d6e45] mb-2">10+</div>
+            <div className="text-[#5c5346]">ปีประสบการณ์</div>
           </div>
-          <div>
-            <div className="text-4xl font-bold text-green-700 mb-2">1000+</div>
-            <div className="text-gray-600">ลูกค้าที่ไว้วางใจ</div>
+          <div className="p-6 bg-[#faf8f3] rounded-2xl">
+            <div className="text-4xl font-bold text-[#5d6e45] mb-2">1000+</div>
+            <div className="text-[#5c5346]">ลูกค้าที่ไว้วางใจ</div>
           </div>
-          <div>
-            <div className="text-4xl font-bold text-green-700 mb-2">50+</div>
-            <div className="text-gray-600">รายการสินค้า</div>
+          <div className="p-6 bg-[#faf8f3] rounded-2xl">
+            <div className="text-4xl font-bold text-[#5d6e45] mb-2">50+</div>
+            <div className="text-[#5c5346]">รายการสินค้า</div>
           </div>
-          <div>
-            <div className="text-4xl font-bold text-green-700 mb-2">100%</div>
-            <div className="text-gray-600">ความพึงพอใจ</div>
+          <div className="p-6 bg-[#faf8f3] rounded-2xl">
+            <div className="text-4xl font-bold text-[#5d6e45] mb-2">100%</div>
+            <div className="text-[#5c5346]">ความพึงพอใจ</div>
           </div>
         </div>
       </div>

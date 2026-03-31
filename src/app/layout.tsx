@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sarabun, Anuphan } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
 import { Toaster } from "@/components/ui/sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const sarabun = Sarabun({
+  variable: "--font-sarabun",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const anuphan = Anuphan({
+  variable: "--font-anuphan",
+  subsets: ["thai", "latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "ฟาร์มพึ่งหนุ่ม - สินค้าคุณภาพจากฟาร์ม",
-  description: "สินค้าคุณภาพจากฟาร์มของเรา สดใหม่ทุกวัน ปลอดภัย และเชื่อถือได้",
+  title: "ฟาร์มพึ่งหนุ่ม - สินค้าคุณภาพจากฟาร์ม ส่งตรงถึงบ้านคุณ",
+  description: "ฟาร์มอินทรีย์ที่มุ่งมั่นส่งมอบผลิตภัณฑ์คุณภาพจากฟาร์มถึงบ้านคุณ เมล่อน ผักสด ของแปรรูป เครื่องดื่ม และผลิตภัณฑ์ทำความสะอาด",
 };
 
 export default function RootLayout({
@@ -27,9 +31,9 @@ export default function RootLayout({
   return (
     <html
       lang="th"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${sarabun.variable} ${anuphan.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col font-[var(--font-anuphan)]">
         <CartProvider>
           {children}
         </CartProvider>

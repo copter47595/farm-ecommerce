@@ -113,11 +113,11 @@ export default function FeaturedProducts() {
 
   if (loading) {
     return (
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-[#f5f1e8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">สินค้าแนะนำ</h2>
-            <p className="text-gray-600">กำลังโหลดสินค้า...</p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#3d3b30] mb-4">สินค้าแนะนำ</h2>
+            <p className="text-[#5c5346] text-lg">กำลังโหลดสินค้า...</p>
           </div>
         </div>
       </section>
@@ -125,29 +125,32 @@ export default function FeaturedProducts() {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-[#f5f1e8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">สินค้าแนะนำ</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-[#5d6e45] font-medium text-sm tracking-wider uppercase mb-2 block">
+            Featured Products
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#3d3b30] mb-4">สินค้าแนะนำ</h2>
+          <p className="text-lg text-[#5c5346] max-w-2xl mx-auto leading-relaxed">
             สินค้าคุณภาพเยี่ยมจากฟาร์มของเรา สดใหม่ทุกวัน
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <Card key={product.id} className="group hover:shadow-lg transition-shadow duration-300 border-gray-200">
+            <Card key={product.id} className="group bg-white border-[#e3dcc9] rounded-2xl overflow-hidden shadow-[0_4px_20px_-4px_rgba(93,110,69,0.1)] hover:shadow-[0_8px_32px_-8px_rgba(93,110,69,0.2)] transition-all duration-300">
               <CardHeader className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
-                    <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                      <span className="text-green-700 text-sm font-medium">ภาพสินค้า</span>
+                <div className="relative overflow-hidden">
+                  <div className="w-full h-52 bg-[#f5f1e8] flex items-center justify-center">
+                    <div className="w-full h-full bg-gradient-to-br from-[#e8ebe0] to-[#d1d7c3] flex items-center justify-center">
+                      <span className="text-[#5d6e45] text-sm font-medium">ภาพสินค้า</span>
                     </div>
                   </div>
                   {product.category && (
                     <Badge 
                       variant="secondary" 
-                      className="absolute top-2 left-2 bg-white/90 text-green-700"
+                      className="absolute top-3 left-3 bg-[#faf8f3]/95 text-[#5d6e45] border border-[#e3dcc9]"
                     >
                       {product.category}
                     </Badge>
@@ -155,39 +158,39 @@ export default function FeaturedProducts() {
                 </div>
               </CardHeader>
 
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-lg text-gray-900 mb-2 group-hover:text-green-700 transition-colors">
+              <CardContent className="p-5">
+                <h3 className="font-semibold text-lg text-[#3d3b30] mb-2 group-hover:text-[#5d6e45] transition-colors">
                   {product.name_th}
                 </h3>
-                <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                <p className="text-[#5c5346] text-sm mb-4 line-clamp-2 leading-relaxed">
                   {product.description_th}
                 </p>
-                <div className="flex items-center gap-1 mb-3">
+                <div className="flex items-center gap-1 mb-4">
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="w-4 h-4 fill-[#d4cbb3] text-[#d4cbb3]" />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-500">(5.0)</span>
+                  <span className="text-sm text-[#6b6b5e]">(5.0)</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-green-700">
+                  <span className="text-2xl font-bold text-[#5d6e45]">
                     ฿{product.price.toFixed(2)}
                   </span>
                   {product.in_stock ? (
-                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                    <Badge variant="secondary" className="bg-[#e8ebe0] text-[#4a5737]">
                       มีสินค้า
                     </Badge>
                   ) : (
-                    <Badge variant="destructive">หมดสต็อก</Badge>
+                    <Badge variant="destructive" className="bg-[#c4705a]">หมดสต็อก</Badge>
                   )}
                 </div>
               </CardContent>
 
-              <CardFooter className="p-4 pt-0">
+              <CardFooter className="p-5 pt-0">
                 <div className="flex gap-2 w-full">
                   <Button 
-                    className="flex-1 bg-green-700 hover:bg-green-800 text-white"
+                    className="flex-1 bg-[#5d6e45] hover:bg-[#4a5737] text-white rounded-xl"
                     disabled={!product.in_stock}
                     onClick={() => addItem({
                       id: product.id,
@@ -203,7 +206,7 @@ export default function FeaturedProducts() {
                   <Link href={`/products/${product.id}`} className="flex-1">
                     <Button 
                       variant="outline" 
-                      className="w-full border-green-700 text-green-700 hover:bg-green-50"
+                      className="w-full border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0] rounded-xl"
                     >
                       ดูรายละเอียด
                     </Button>
@@ -214,12 +217,12 @@ export default function FeaturedProducts() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Link href="/products">
             <Button 
               variant="outline" 
               size="lg"
-              className="border-green-700 text-green-700 hover:bg-green-50 px-8"
+              className="border-[#5d6e45] text-[#5d6e45] hover:bg-[#5d6e45] hover:text-white px-8 py-6 rounded-full transition-all duration-300"
             >
               ดูสินค้าทั้งหมด
             </Button>
