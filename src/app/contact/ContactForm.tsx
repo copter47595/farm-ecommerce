@@ -31,21 +31,21 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <Card className="border-green-200 bg-green-50">
+      <Card className="border-[#e8ebe0] bg-[#f5f1e8]">
         <CardContent className="p-8 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="w-8 h-8 text-green-700" />
+          <div className="w-16 h-16 bg-[#e8e0d0] rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-8 h-8 text-[#5d6e45]" />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">
+          <h3 className="text-xl font-bold text-[#3d3b30] mb-2">
             ส่งข้อความสำเร็จ
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-[#5c5346] mb-4">
             ขอบคุณที่ติดต่อเรา ทีมงานจะตอบกลับโดยเร็วที่สุด
           </p>
           <Button
             onClick={() => setIsSubmitted(false)}
             variant="outline"
-            className="border-green-700 text-green-700 hover:bg-green-50"
+            className="border-[#5d6e45] text-[#5d6e45] hover:bg-[#e8ebe0]"
           >
             ส่งข้อความใหม่
           </Button>
@@ -57,8 +57,8 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <Label htmlFor="name" className="text-gray-700">
-          ชื่อ <span className="text-red-500">*</span>
+        <Label htmlFor="name" className="text-[#5c5346]">
+          ชื่อ <span className="text-[#c4705a]">*</span>
         </Label>
         <Input
           id="name"
@@ -66,13 +66,13 @@ export default function ContactForm() {
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           placeholder="กรอกชื่อของคุณ"
           required
-          className="mt-1"
+          className="mt-1 border-[#e3dcc9] focus:border-[#5d6e45] focus:ring-[#5d6e45]"
         />
       </div>
 
       <div>
-        <Label htmlFor="email" className="text-gray-700">
-          อีเมล <span className="text-red-500">*</span>
+        <Label htmlFor="email" className="text-[#5c5346]">
+          อีเมล <span className="text-[#c4705a]">*</span>
         </Label>
         <Input
           id="email"
@@ -81,13 +81,13 @@ export default function ContactForm() {
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           placeholder="example@email.com"
           required
-          className="mt-1"
+          className="mt-1 border-[#e3dcc9] focus:border-[#5d6e45] focus:ring-[#5d6e45]"
         />
       </div>
 
       <div>
-        <Label htmlFor="message" className="text-gray-700">
-          ข้อความ <span className="text-red-500">*</span>
+        <Label htmlFor="message" className="text-[#5c5346]">
+          ข้อความ <span className="text-[#c4705a]">*</span>
         </Label>
         <Textarea
           id="message"
@@ -96,14 +96,14 @@ export default function ContactForm() {
           placeholder="เขียนข้อความของคุณที่นี่..."
           rows={5}
           required
-          className="mt-1"
+          className="mt-1 border-[#e3dcc9] focus:border-[#5d6e45] focus:ring-[#5d6e45]"
         />
       </div>
 
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-green-700 hover:bg-green-800 text-white py-3"
+        className="w-full bg-[#5d6e45] hover:bg-[#4a5737] text-white py-3"
       >
         {isSubmitting ? (
           'กำลังส่ง...'

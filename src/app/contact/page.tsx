@@ -37,7 +37,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#3d3b30] mb-6">
                   ส่งข้อความถึงเรา
                 </h2>
                 <ContactForm />
@@ -45,7 +45,7 @@ export default function ContactPage() {
 
               {/* Farm Info */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#3d3b30] mb-6">
                   ข้อมูลติดต่อ
                 </h2>
 
@@ -120,13 +120,13 @@ export default function ContactPage() {
 
             {/* Google Maps Placeholder */}
             <div className="mt-16">
-              <Card className="border-gray-200 overflow-hidden">
+              <Card className="border-[#e3dcc9] overflow-hidden">
                 <CardContent className="p-0">
-                  <div className="aspect-[21/9] bg-gray-100 flex items-center justify-center">
+                  <div className="aspect-[21/9] bg-[#f5f1e8] flex items-center justify-center">
                     <div className="text-center">
-                      <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                      <p className="text-gray-500">Google Maps Embed</p>
-                      <p className="text-sm text-gray-400 mt-1">
+                      <MapPin className="w-12 h-12 text-[#b3bfa0] mx-auto mb-2" />
+                      <p className="text-[#6b6b5e]">Google Maps Embed</p>
+                      <p className="text-sm text-[#6b6b5e] mt-1">
                         วางโค้ด iframe Google Maps ที่นี่
                       </p>
                     </div>
